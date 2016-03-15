@@ -40,7 +40,7 @@ static NSString * textCell = @"TextCell";
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCell];
-    cell.imageName = @"images";
+    cell.imageName = @"http://www.easyicon.net/1185794-Rectangle_tool_icon.html";
     
     return cell;
 }

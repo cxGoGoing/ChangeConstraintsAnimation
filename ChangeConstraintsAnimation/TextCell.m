@@ -9,6 +9,7 @@
 #import "TextCell.h"
 #import <PureLayout.h>
 #import "UIImage+RoundCorner.h"
+#import "UIImageView+WebCache.h"
 @interface TextCell()
 @property (nonatomic,weak)UIImageView * titleImageView;
 @property (nonatomic,weak)UIImageView * pureImageView;
@@ -39,7 +40,11 @@
 }
 - (void)setImageName:(NSString *)imageName{
     _imageName = [imageName copy];
-    self.titleImageView.image = [[UIImage imageNamed:imageName]xsy_addRoundCorner:4 Size:CGSizeMake(50, 40)];
+    //self.titleImageView.image = [[UIImage imageNamed:imageName]xsy_addRoundCorner:4 Size:CGSizeMake(50, 40)];
+    __weak typeof(self)weakSelf = self;
+    [self.titleImageView sd_setImageWithURL:[NSURL URLWithString:imageName] placeholderImage:[UIImage imageNamed:@"Swift"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        weakSelf.titleImageView.image = [image xsy_addRoundCorner:4 Size:CGSizeMake(50, 40)];
+    }];
 }
 
 
