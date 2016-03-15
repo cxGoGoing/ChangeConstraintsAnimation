@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (RoundCorner)
-
+- (void)xsy_addRoundCorner:(CGFloat)radius size:(CGSize)size backgroudColor:(UIColor*)backgroudColor;
 @end

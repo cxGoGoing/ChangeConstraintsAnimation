@@ -24,6 +24,22 @@
     UIGraphicsEndImageContext();
     return scaledImage;
 }
+
++ (UIImage*)xsy_addRoundCorner:(CGFloat)radius size:(CGSize)size backgroudnImage:(UIImage *)backgroundImage{
+    if (size.width == 0 && size.height == 0) {
+        return nil;
+    }
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+    CGContextAddPath(UIGraphicsGetCurrentContext(), bezierPath.CGPath);
+    CGContextClip(UIGraphicsGetCurrentContext());
+    CGContextDrawPath(UIGraphicsGetCurrentContext(), kCGPathFillStroke);
+    [backgroundImage drawInRect:rect];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
+}
 + (UIImage*)xsy_CreatePureCirlceImage:(CGSize)size color:(UIColor *)backgroundColor{
     if (size.width == 0 && size.height == 0) {
         return nil;

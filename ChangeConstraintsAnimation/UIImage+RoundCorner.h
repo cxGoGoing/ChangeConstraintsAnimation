@@ -11,4 +11,5 @@
 @interface UIImage (RoundCorner)
 - (UIImage*)xsy_addRoundCorner:(CGFloat)radius Size:(CGSize)size;
 + (UIImage*)xsy_CreatePureCirlceImage:(CGSize)size color:(UIColor*)backgroundColor;
++ (UIImage*)xsy_addRoundCorner:(CGFloat)radius size:(CGSize)size backgroudnImage:(UIImage*)backgroundImage;
 @end
