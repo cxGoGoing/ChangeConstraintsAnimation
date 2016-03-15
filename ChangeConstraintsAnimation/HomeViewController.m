@@ -9,6 +9,9 @@
 #import "HomeViewController.h"
 #import <PureLayout.h>
 #import "TextCell.h"
+#if DEBUG
+#import "FLEXManager.h"
+#endif
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak)UIImageView * redImageView;
 @property (nonatomic,strong)NSLayoutConstraint * widthConstraint;
@@ -20,10 +23,16 @@ static NSString * textCell = @"TextCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"FLEX" style:UIBarButtonItemStyleDone target:self action:@selector(showFLex)];
     [self setUpUI];
     //[self setUpRedImageView];
     // Do any additional setup after loading the view.
 }
+- (void)showFLex{
+    [[FLEXManager sharedManager]showExplorer];
+}
+
 #pragma mark -- TableView Delegate and DataSouce
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 100;
