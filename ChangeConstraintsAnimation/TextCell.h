@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TextCell : UITableViewCell
-
+@property (nonatomic,copy)NSString * imageName;
 @end
