@@ -14,6 +14,7 @@
 		57CF340B1C97992100312F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57CF34091C97992100312F33 /* LaunchScreen.storyboard */; };
 		57CF34161C97992100312F33 /* ChangeConstraintsAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF34151C97992100312F33 /* ChangeConstraintsAnimationTests.m */; };
 		57CF34211C97992100312F33 /* ChangeConstraintsAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF34201C97992100312F33 /* ChangeConstraintsAnimationUITests.m */; };
+		57DCBB641C979A420061F090 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB631C979A420061F090 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		57CF341C1C97992100312F33 /* ChangeConstraintsAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChangeConstraintsAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CF34201C97992100312F33 /* ChangeConstraintsAnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeConstraintsAnimationUITests.m; sourceTree = "<group>"; };
 		57CF34221C97992100312F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DCBB621C979A420061F090 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		57DCBB631C979A420061F090 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		F51F7AD0A97F268C6DF4BF02 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,8 @@
 				57CF34091C97992100312F33 /* LaunchScreen.storyboard */,
 				57CF340C1C97992100312F33 /* Info.plist */,
 				57CF34011C97992100312F33 /* Supporting Files */,
+				57DCBB621C979A420061F090 /* HomeViewController.h */,
+				57DCBB631C979A420061F090 /* HomeViewController.m */,
 			);
 			path = ChangeConstraintsAnimation;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			files = (
 				57CF34061C97992100312F33 /* AppDelegate.m in Sources */,
 				57CF34031C97992100312F33 /* main.m in Sources */,
+				57DCBB641C979A420061F090 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
