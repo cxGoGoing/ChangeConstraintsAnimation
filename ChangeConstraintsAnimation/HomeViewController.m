@@ -40,6 +40,7 @@ static NSString * textCell = @"TextCell";
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCell];
     cell.textLabel.text = [NSString stringWithFormat:@"%p",cell];
+    
     return cell;
 }
 

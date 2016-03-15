@@ -16,6 +16,7 @@
 		57CF34211C97992100312F33 /* ChangeConstraintsAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF34201C97992100312F33 /* ChangeConstraintsAnimationUITests.m */; };
 		57DCBB641C979A420061F090 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB631C979A420061F090 /* HomeViewController.m */; };
 		57DCBB681C97A4840061F090 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DCBB671C97A4840061F090 /* TextCell.m */; };
+		57DD560A1C97BC5300FA36B2 /* UIImage+RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DD56091C97BC5300FA36B2 /* UIImage+RoundCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		57DCBB631C979A420061F090 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		57DCBB661C97A4840061F090 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
 		57DCBB671C97A4840061F090 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
+		57DD56081C97BC5300FA36B2 /* UIImage+RoundCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundCorner.h"; sourceTree = "<group>"; };
+		57DD56091C97BC5300FA36B2 /* UIImage+RoundCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundCorner.m"; sourceTree = "<group>"; };
 		F51F7AD0A97F268C6DF4BF02 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +130,8 @@
 				57CF34021C97992100312F33 /* main.m */,
 				57DCBB661C97A4840061F090 /* TextCell.h */,
 				57DCBB671C97A4840061F090 /* TextCell.m */,
+				57DD56081C97BC5300FA36B2 /* UIImage+RoundCorner.h */,
+				57DD56091C97BC5300FA36B2 /* UIImage+RoundCorner.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 			files = (
 				57CF34061C97992100312F33 /* AppDelegate.m in Sources */,
 				57CF34031C97992100312F33 /* main.m in Sources */,
+				57DD560A1C97BC5300FA36B2 /* UIImage+RoundCorner.m in Sources */,
 				57DCBB681C97A4840061F090 /* TextCell.m in Sources */,
 				57DCBB641C979A420061F090 /* HomeViewController.m in Sources */,
 			);
