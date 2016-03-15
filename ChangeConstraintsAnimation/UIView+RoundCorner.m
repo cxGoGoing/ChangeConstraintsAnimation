@@ -13,6 +13,11 @@
     if(size.width == 0 || size.height == 0){
         return;
     }
-    
+}
+/**  防止像素没有落在坐标点上  */
+static inline float pixel(float num){
+    float unit = 1.0 / [UIScreen mainScreen].scale;
+    double remain = fmod(num, unit);
+    return num - remain + (remain >= unit / 2.0? unit: 0);
 }
 @end
