@@ -26,8 +26,8 @@ static NSString * textCell = @"TextCell";
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"FLEX" style:UIBarButtonItemStyleDone target:self action:@selector(showFLex)];
-    [self setUpUI];
-    //[self setUpRedImageView];
+    [self setUpUI];/**<  显示不同圆角的cell  */
+    //[self setUpRedImageView];/**<  根据改动限制做动画  */
     // Do any additional setup after loading the view.
 }
 - (void)showFLex{
@@ -76,7 +76,7 @@ static NSString * textCell = @"TextCell";
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [UIView animateWithDuration:2 animations:^{
         self.topConstraint.constant = 200;
-        [self.redImageView layoutIfNeeded];
+        [self.view layoutIfNeeded];
     }];
 }
 

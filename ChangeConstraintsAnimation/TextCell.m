@@ -9,7 +9,6 @@
 #import "TextCell.h"
 #import <PureLayout.h>
 #import "UIImage+RoundCorner.h"
-#import "UIView+RoundCorner.h"
 #import "UIImageView+WebCache.h"
 @interface TextCell()
 @property (nonatomic,weak)UIImageView * titleImageView;
@@ -35,9 +34,10 @@
 
     UIImageView* pureImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:pureImageView];
-    pureImageView.image = [UIImage xsy_CreatePureCirlceImage:CGSizeMake(20, 20)
-                                                       color:[UIColor redColor]];
-    [pureImageView autoSetDimensionsToSize:CGSizeMake(20, 20)];
+//    pureImageView.image = [UIImage xsy_CreatePureCirlceImage:CGSizeMake(40, 20)
+//                                                       color:[UIColor redColor]];
+    pureImageView.image = [UIImage xsy_CreatePureCirlceImage:CGSizeMake(40, 20) color:[UIColor greenColor] radius:4];
+    [pureImageView autoSetDimensionsToSize:CGSizeMake(40, 20)];
     [pureImageView autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:20];
     [pureImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
     self.pureImageView = pureImageView;
@@ -55,12 +55,15 @@
     numberLabel.font = [UIFont systemFontOfSize:11];
     [numberLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:80];
     [numberLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [numberLabel autoSetDimensionsToSize:CGSizeMake(20, 20)];
     self.numberLabel =numberLabel;
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath{
     _indexPath = indexPath;
     self.numberLabel.text = [NSString stringWithFormat:@"%zi",indexPath.row];
+    self.numberLabel.layer.cornerRadius = 10;
+    self.numberLabel.layer.backgroundColor = [UIColor redColor].CGColor;
 
 }
 - (void)setImageName:(NSString *)imageName{
