@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import <PureLayout.h>
+#import "UIImage+RoundCorner.h"
 #import "TextCell.h"
 #if DEBUG
 #import "FLEXManager.h"
@@ -39,7 +40,8 @@ static NSString * textCell = @"TextCell";
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCell];
-    cell.textLabel.text = [NSString stringWithFormat:@"%p",cell];
+    //cell.textLabel.text = [NSString stringWithFormat:@"%p",cell];
+    cell.imageView.image = [[UIImage imageNamed:@"images"]xsy_addRoundCorner:8 Size:CGSizeMake(50, 40)];
     
     return cell;
 }
