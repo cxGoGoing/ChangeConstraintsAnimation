@@ -41,6 +41,7 @@ static NSString * textCell = @"TextCell";
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCell];
     cell.imageName = @"https://devrs.s3.cn-north-1.amazonaws.com.cn/10201/2016/03/14/s_fc00694e-871f-4ffc-8eb6-28bc4341fabc.jpg";
+    cell.indexPath = indexPath;
     
     return cell;
 }

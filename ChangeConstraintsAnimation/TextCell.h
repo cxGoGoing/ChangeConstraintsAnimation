@@ -10,4 +10,5 @@
 
 @interface TextCell : UITableViewCell
 @property (nonatomic,copy)NSString * imageName;
+@property (nonatomic,strong)NSIndexPath * indexPath;
 @end

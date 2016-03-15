@@ -9,11 +9,13 @@
 #import "TextCell.h"
 #import <PureLayout.h>
 #import "UIImage+RoundCorner.h"
+#import "UIView+RoundCorner.h"
 #import "UIImageView+WebCache.h"
 @interface TextCell()
 @property (nonatomic,weak)UIImageView * titleImageView;
 @property (nonatomic,weak)UIImageView * pureImageView;
 @property (nonatomic,weak)UIImageView * leadImageView;
+@property (nonatomic,weak)UILabel * numberLabel;
 @end
 @implementation TextCell
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -22,29 +24,44 @@
     }
     return self;
 }
-- (void)setUpUI{
-  UIImageView *titleImageView = [[UIImageView alloc] init];
-  [self.contentView addSubview:titleImageView];
-  [titleImageView autoSetDimensionsToSize:CGSizeMake(50, 40)];
-  [titleImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
-  [titleImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-  self.titleImageView = titleImageView;
+- (void)setUpUI
+{
+    UIImageView* titleImageView = [[UIImageView alloc] init];
+    [self.contentView addSubview:titleImageView];
+    [titleImageView autoSetDimensionsToSize:CGSizeMake(50, 40)];
+    [titleImageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [titleImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    self.titleImageView = titleImageView;
 
-  UIImageView *pureImageView = [[UIImageView alloc] init];
-  [self.contentView addSubview:pureImageView];
-  pureImageView.image = [UIImage xsy_CreatePureCirlceImage:CGSizeMake(20, 20)
-                                                     color:[UIColor redColor]];
-  [pureImageView autoSetDimensionsToSize:CGSizeMake(20, 20)];
-  [pureImageView autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:20];
-  [pureImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-  self.pureImageView = pureImageView;
+    UIImageView* pureImageView = [[UIImageView alloc] init];
+    [self.contentView addSubview:pureImageView];
+    pureImageView.image = [UIImage xsy_CreatePureCirlceImage:CGSizeMake(20, 20)
+                                                       color:[UIColor redColor]];
+    [pureImageView autoSetDimensionsToSize:CGSizeMake(20, 20)];
+    [pureImageView autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:20];
+    [pureImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    self.pureImageView = pureImageView;
 
-    UIImageView *leadImageView = [[UIImageView alloc]init];
+    UIImageView* leadImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:leadImageView];
     [leadImageView autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:20];
     [leadImageView autoSetDimensionsToSize:CGSizeMake(50, 40)];
     [leadImageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    self.leadImageView=leadImageView;
+    self.leadImageView = leadImageView;
+
+    UILabel * numberLabel = [[UILabel alloc]init];
+    [self.contentView addSubview:numberLabel];
+    numberLabel.textAlignment = NSTextAlignmentCenter;
+    numberLabel.font = [UIFont systemFontOfSize:11];
+    [numberLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:80];
+    [numberLabel autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    self.numberLabel =numberLabel;
+}
+
+- (void)setIndexPath:(NSIndexPath *)indexPath{
+    _indexPath = indexPath;
+    self.numberLabel.text = [NSString stringWithFormat:@"%zi",indexPath.row];
+
 }
 - (void)setImageName:(NSString *)imageName{
     _imageName = [imageName copy];
