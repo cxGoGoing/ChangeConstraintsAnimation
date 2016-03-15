@@ -8,21 +8,48 @@
 
 #import "HomeViewController.h"
 #import <PureLayout.h>
-@interface HomeViewController ()
+#import "TextCell.h"
+@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak)UIImageView * redImageView;
 @property (nonatomic,strong)NSLayoutConstraint * widthConstraint;
 @property (nonatomic,strong)NSLayoutConstraint * topConstraint;
+@property (nonatomic,weak)UITableView * tableView;
 @end
-
+static NSString * textCell = @"TextCell";
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    //[self setUpRedImageView];
     // Do any additional setup after loading the view.
+}
+#pragma mark -- TableView Delegate and DataSouce
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 100;
+}
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    TextCell * cell = [tableView dequeueReusableCellWithIdentifier:textCell];
+    cell.textLabel.text = [NSString stringWithFormat:@"%p",cell];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44+indexPath.row*2;
 }
 
 - (void)setUpUI{
+    UITableView * tableView = [[UITableView alloc]init];
+    [self.view addSubview:tableView];
+    [tableView autoPinEdgesToSuperviewEdges];
+    [tableView registerClass:[TextCell class] forCellReuseIdentifier:textCell];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    self.tableView = tableView;
+}
+
+- (void)setUpRedImageView{
     UIImageView * redImageView = [[UIImageView alloc]init];
     [self.view addSubview:redImageView];
     redImageView.backgroundColor = [UIColor redColor];
